@@ -2,13 +2,15 @@ function getProduct() {
     var productDiv = document.createElement("div");
     productDiv.className = "product"
 
+    var price = "23,99"
+
     var prodImg = document.createElement("img");
-    prodImg.src = "img/products/1.jpg";
+    prodImg.src = "/images/products/1.jpg";
     prodImg.className = "product_img";
 
     var productTitle = document.createElement("h3");
     productTitle.className = "product_title";
-    productTitle.innerHTML = "Budynki mordoru, 23,99zl"
+    productTitle.innerHTML = "Budynki mordoru" + ", " + price;
 
     var productDesc = document.createElement("p");
     productDesc.className = "product_desc";
