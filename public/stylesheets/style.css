@@ -1,9 +1,34 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: aquamarine;
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap');
+
+html {
+    background: url(../imgages/bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-a {
-  color: #00B7FF;
+.center {
+    margin: 0 auto;
+    width: 800px;
+}
+
+.center_in {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+    color: white;
+    font-size: 50pt;
+    margin-bottom: 0;
+}
+
+h2 {
+    margin-top: 0;
+    font-family: 'Rubik', sans-serif;
+    color: white;
+    font-weight: 300;
+    font-size: 14pt;
 }
