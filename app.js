@@ -11,8 +11,6 @@ const users = require('./routes/users')
 
 var azure = require('azure-storage')
 
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
 
 // error handler
 onerror(app)
@@ -47,8 +45,5 @@ app.on('error', (err, ctx) => {
 });
 
 module.exports = app
-
-const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
-console.log(dom.window.document.querySelector("p").textContent); // "Hello world"
 
 //var tableSvc = azure.createTableService('yourbestappstor', 'jJdxCY8ysmhX0QoKKIKMLAwkmg35IOPZBPRDq+RdZQFCgeceLfzPPioOMHNsKkeKX1dsis/4MGm16xRxbEm4kQ==');
