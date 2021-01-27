@@ -10,7 +10,7 @@ const index = require('./routes/index')
 const users = require('./routes/users')
 
 var azure = require('azure-storage')
-var tools = require('./public/javascripts/script')
+var jsdom = require('jsdom')
 
 // error handler
 onerror(app)
@@ -47,3 +47,15 @@ app.on('error', (err, ctx) => {
 module.exports = app
 
 //var tableSvc = azure.createTableService('yourbestappstor', 'jJdxCY8ysmhX0QoKKIKMLAwkmg35IOPZBPRDq+RdZQFCgeceLfzPPioOMHNsKkeKX1dsis/4MGm16xRxbEm4kQ==');
+
+var options = {
+  runScripts: 'dangerously',
+  resources: "usable",
+  beforeParse: function (window) {
+      window.foo = function () {
+          console.log('bar');
+      };
+  }
+};
+
+var dom = new jsdom('<script>foo()<\/script>',options);
