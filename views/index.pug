@@ -14,9 +14,8 @@ block content
     each product in products
       .product
         img.product_img(src=product.img)
-        h3.product_title= product.name
-        p.product_desc
-          | This work is a phantasmagoric, urban world in which death and waste are omnipresent consisting of appropriated internet footage.
+        h3.product_title= product.name + ", " + product.price + "zl"
+        p.product_desc= product.desc
         .spacer(style='clear: both;')
   table
     tr
