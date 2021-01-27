@@ -48,11 +48,7 @@ app.on('error', (err, ctx) => {
 
 module.exports = app
 
-const dom = new JSDOM(`<body>
-  <script>document.body.appendChild(document.createElement("hr"));</script>
-</body>`, { runScripts: "dangerously" });
-
-// The script will be executed and modify the DOM:
-dom.window.document.body.children.length === 2;
+const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
+console.log(dom.window.document.querySelector("p").textContent); // "Hello world"
 
 //var tableSvc = azure.createTableService('yourbestappstor', 'jJdxCY8ysmhX0QoKKIKMLAwkmg35IOPZBPRDq+RdZQFCgeceLfzPPioOMHNsKkeKX1dsis/4MGm16xRxbEm4kQ==');
