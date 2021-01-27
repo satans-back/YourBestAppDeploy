@@ -19,7 +19,6 @@ const listProducts = async () => (
        service.queryEntities(table, query, null, (error, result, response) => {
         !error ? resolve(result.entries.map((entry) => ({
           name: entry.name._,
-          desc: entry.desc._
         }))) : reject()
       })
     })
