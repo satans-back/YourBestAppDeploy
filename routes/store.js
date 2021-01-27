@@ -14,7 +14,6 @@ const listProducts = async () => (
     new Promise((resolve, reject) => {
         const query = new storage.TableQuery()
        .select(['name'], ['desc'])
-       .where('PartitionKey eq ?', 'product')
 
        service.queryEntities(table, query, null, (error, result, response) => {
         !error ? resolve(result.entries.map((entry) => ({
