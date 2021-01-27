@@ -46,3 +46,9 @@ app.on('error', (err, ctx) => {
 module.exports = app
 
 var tableSvc = azure.createTableService('yourbestappstor', 'jJdxCY8ysmhX0QoKKIKMLAwkmg35IOPZBPRDq+RdZQFCgeceLfzPPioOMHNsKkeKX1dsis/4MGm16xRxbEm4kQ==');
+
+tableSvc.createTableIfNotExists('productsdb', function(error, result, response){
+  if(!error){
+  
+  }
+});
