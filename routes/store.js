@@ -13,14 +13,11 @@ const init = async () => (
 const listProducts = async () => (
     new Promise((resolve, reject) => {
         const query = new storage.TableQuery()
-       .select(['name'], ['desc'], ['img'], ['price'])
+       .select(['name'])
 
        service.queryEntities(table, query, null, (error, result, response) => {
         !error ? resolve(result.entries.map((entry) => ({
           name: entry.name._,
-          desc: entry.desc._,
-          img: entry.img._,
-          price: price.img_
         }))) : reject()
       })
     })
