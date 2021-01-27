@@ -8,7 +8,8 @@ const logger = require('koa-logger')
 
 const index = require('./routes/index')
 const users = require('./routes/users')
-const store = require('./store')
+
+var storage = require('azure-storage')
 
 // error handler
 onerror(app)
@@ -43,3 +44,5 @@ app.on('error', (err, ctx) => {
 });
 
 module.exports = app
+
+var tableSvc = storage.createTableService('yourbestappstor', 'jJdxCY8ysmhX0QoKKIKMLAwkmg35IOPZBPRDq+RdZQFCgeceLfzPPioOMHNsKkeKX1dsis/4MGm16xRxbEm4kQ==');
