@@ -20,7 +20,7 @@ const listProducts = async () => (
           name: entry.name._,
           desc: entry.desc._,
           img: entry.img._,
-          price: entry.price._,
+          price: entry.price._
         }))) : reject()
       })
     })
