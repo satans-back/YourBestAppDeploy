@@ -11,6 +11,7 @@ const users = require('./routes/users')
 
 var azure = require('azure-storage')
 var jsdom = require('jsdom')
+var {JSDOM} = jsdom;
 
 // error handler
 onerror(app)
@@ -47,3 +48,10 @@ app.on('error', (err, ctx) => {
 module.exports = app
 
 //var tableSvc = azure.createTableService('yourbestappstor', 'jJdxCY8ysmhX0QoKKIKMLAwkmg35IOPZBPRDq+RdZQFCgeceLfzPPioOMHNsKkeKX1dsis/4MGm16xRxbEm4kQ==');
+
+const dom = new JSDOM(`<body>
+  <script>document.getElementById("shop_view").innerHTML = "XD";</script>
+</body>`, { runScripts: "dangerously" });
+ 
+// The script will be executed and modify the DOM:
+dom.window.document.body.children.length === 2;
