@@ -14,7 +14,10 @@ const listProducts = async () => (
     new Promise((resolve, reject) => {
         tableSvc.queryEntities(table, query, null, function(error, result, response) {
             if(!error) {
-              // query was successful
+                var entities = result.entries;
+                entities.forEach(function(entity) {
+                    console.log('XD')
+                })
             }
         });
     })
