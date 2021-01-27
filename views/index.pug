@@ -5,23 +5,9 @@ block content
   h1.center_in Your Best App!
   h2.center_in Made by Przemyslaw Pomiechowski
   #shop_view.center
-    .product
-      img.product_img(src='/images/products/1.jpg' onclick='getProduct()')
-      h3.product_title Budynki mordoru, 23.99zl
-      p.product_desc
-        | This work is a phantasmagoric, urban world in which death and waste are omnipresent consisting of appropriated internet footage.
-      .spacer(style='clear: both;')
     each product in products
       .product
         img.product_img(src=product.img)
         h3.product_title= product.name + ", " + product.price + "zl"
         p.product_desc= product.desc
         .spacer(style='clear: both;')
-  table
-    tr
-      th(scope= "col") Name
-      th(scope= "col") Desc
-    each product in products
-      tr
-        td= product.name
-        td= product.desc
