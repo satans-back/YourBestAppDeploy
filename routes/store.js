@@ -12,16 +12,18 @@ const init = async () => (
 
 const listProducts = async () => (
     new Promise((resolve, reject) => {
-        tableSvc.queryEntities(table, query, null, function(error, result, response) {
-            if(!error) {
-                var entities = result.entries;
-                entities.forEach(function(entity) {
-                    console.log('XD')
-                })
-            }
-        });
+        const query = new storage.TableQuery()
+       .select(['name'], ['desc'])
+       .where('PartitionKey eq ?', 'product')
+
+       service.queryEntities(table, query, null, (error, result, response) => {
+        !error ? resolve(result.entries.map((entry) => ({
+          name: entry.name._,
+          desc: entry.desc._
+        }))) : reject()
+      })
     })
-  )
+)
 
  module.exports = {
    init,

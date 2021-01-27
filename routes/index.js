@@ -1,9 +1,9 @@
 const router = require('koa-router')()
+const store = require('./store')
 
 router.get('/', async (ctx, next) => {
-  await ctx.render('index', {
-    title: 'Your Best App!'
-  })
+  products = await store.listTasks()
+  await ctx.render('index', { products })
 })
 
 router.get('/string', async (ctx, next) => {
