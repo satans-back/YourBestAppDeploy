@@ -11,11 +11,9 @@ block content
       p.product_desc
         | This work is a phantasmagoric, urban world in which death and waste are omnipresent consisting of appropriated internet footage.
       .spacer(style='clear: both;')
-    each photo in products
-      .product
-        img.product_img(src=photo.img)
-        h3.product_title = Budynki mordoru, 23.99zl
-        p.product_desc
-        | This work is a phantasmagoric, urban world in which death and waste are omnipresent consisting of appropriated internet footage.
-        .spacer(style='clear: both;')
-        
+  table
+    tr
+      th(scope="col") Tytuł
+    each product in products
+      tr
+        td=product.name
