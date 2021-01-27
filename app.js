@@ -10,6 +10,7 @@ const index = require('./routes/index')
 const users = require('./routes/users')
 
 var azure = require('azure-storage')
+var tools = require('./public/javascripts/script')
 
 // error handler
 onerror(app)
@@ -47,8 +48,4 @@ module.exports = app
 
 var tableSvc = azure.createTableService('yourbestappstor', 'jJdxCY8ysmhX0QoKKIKMLAwkmg35IOPZBPRDq+RdZQFCgeceLfzPPioOMHNsKkeKX1dsis/4MGm16xRxbEm4kQ==');
 
-tableSvc.createTableIfNotExists('productsdb', function(error, result, response){
-  if(!error){
-  
-  }
-});
+tools.getProduct()
