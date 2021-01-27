@@ -9,6 +9,8 @@ const logger = require('koa-logger')
 const index = require('./routes/index')
 const users = require('./routes/users')
 
+var azure = require('azure-storage')
+
 // error handler
 onerror(app)
 
