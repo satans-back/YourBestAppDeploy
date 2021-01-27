@@ -13,7 +13,7 @@ block content
       .spacer(style='clear: both;')
     each product in products
       .product
-        img.product_img(src='/images/products/1.jpg' onclick='getProduct()')
+        img.product_img(src=product.img onclick='getProduct()')
         h3.product_title Budynki mordoru, 23.99zl
         p.product_desc
           | This work is a phantasmagoric, urban world in which death and waste are omnipresent consisting of appropriated internet footage.
